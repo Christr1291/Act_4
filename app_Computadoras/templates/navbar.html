@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="{% url 'inicio' %}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-pc" viewBox="0 0 16 16">
+          <path d="M5 1a2 2 0 0 0-2 2v7h10V3a2 2 0 0 0-2-2H5z"/>
+          <path d="M0 12.5A1.5 1.5 0 0 1 1.5 11H14.5A1.5 1.5 0 0 1 16 12.5v.5a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-.5z"/>
+        </svg>
+        <span class="ms-2">Sistema de Administración de Computadoras y Accesorios</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="prodMenu" role="button" data-bs-toggle="dropdown">Productos</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="prodMenu">
+              <li><a class="dropdown-item" href="{% url 'agregar_producto' %}">Agregar Producto</a></li>
+              <li><a class="dropdown-item" href="{% url 'ver_productos' %}">Ver Productos</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="provMenu" role="button" data-bs-toggle="dropdown">Proveedores</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="provMenu">
+              <li><a class="dropdown-item" href="{% url 'agregar_proveedor' %}">Agregar Proveedor</a></li>
+              <li><a class="dropdown-item" href="{% url 'ver_proveedores' %}">Ver Proveedores</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="factMenu" role="button" data-bs-toggle="dropdown">Facturas</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="factMenu">
+              <li><a class="dropdown-item" href="#">Agregar Factura</a></li>
+              <li><a class="dropdown-item" href="#">Ver Facturas</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Actualizar Proveedor</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre" value="{{ proveedor.nombre }}" required><br><br>
+    <label>Contacto:</label><br>
+    <input type="text" name="contacto" value="{{ proveedor.contacto }}"><br><br>
+    <label>Teléfono:</label><br>
+    <input type="text" name="telefono" value="{{ proveedor.telefono }}"><br><br>
+    <label>Correo:</label><br>
+    <input type="email" name="correo" value="{{ proveedor.correo }}"><br><br>
+    <label>Dirección:</label><br>
+    <input type="text" name="direccion" value="{{ proveedor.direccion }}"><br><br>
+    <label>País:</label><br>
+    <input type="text" name="pais" value="{{ proveedor.pais }}"><br><br>
+    <button type="submit">Actualizar</button>
+    <a href="{% url 'ver_proveedores' %}">Cancelar</a>
+</form>
+{% endblock %}

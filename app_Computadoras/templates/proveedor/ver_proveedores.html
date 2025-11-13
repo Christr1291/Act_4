@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>proveedores</h2>
+<a class="btn btn-success mb-3" href="{% url 'agregar_proveedor' %}">Agregar proveedor</a>
+<table class="table table-striped table-bordered">
+    <thead class="table-light">
+        <tr>
+        <th>ID</th><th>Nombre</th><th>Contacto</th><th>Correo</th><th>Telefono</th><th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in proveedores %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.contacto }}</td>
+            <td>{{ p.correo }}</td>
+            <td>{{ p.telefono}}</td>
+            <td>
+                <a class="btn btn-sm btn-info" href="{% url 'actualizar_proveedor' p.id %}">Editar</a>
+                <form method="post" action="{% url 'borrar_proveedor' p.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button class="btn btn-sm btn-danger" type="submit">Borrar</button>
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6" class="text-center">No hay proveedores.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

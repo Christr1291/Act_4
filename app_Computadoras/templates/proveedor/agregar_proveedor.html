@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Agregar Proveedor</h2>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="nombre" placeholder="Nombre" required><br>
+    <input type="text" name="contacto" placeholder="Contacto"><br>
+    <input type="text" name="telefono" placeholder="Teléfono"><br>
+    <input type="email" name="correo" placeholder="Correo"><br>
+    <input type="text" name="direccion" placeholder="Dirección"><br>
+    <input type="text" name="pais" placeholder="País"><br>
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Borrar Proveedor</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Sí, borrar</button>
+    <a href="{% url 'ver_proveedores' %}">Cancelar</a>
+</form>
+{% endblock %}

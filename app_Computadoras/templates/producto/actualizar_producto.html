@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Actualizar Producto</h2>
+<form method="POST" action="{% url 'actualizar_producto' producto.id %}">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Nombre</label>
+    <input class="form-control" name="nombre" value="{{ producto.nombre }}">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Descripción</label>
+    <textarea class="form-control" name="descripcion">{{ producto.descripcion }}</textarea>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label class="form-label">Precio</label>
+      <input class="form-control" name="precio" value="{{ producto.precio }}">
+    </div>
+    <div class="col">
+      <label class="form-label">Stock</label>
+      <input class="form-control" name="stock" value="{{ producto.stock }}">
+    </div>
+    <div class="col">
+      <label class="form-label">Categoría (ID)</label>
+      <input class="form-control" name="categoria" value="{{ producto.categoria }}">
+    </div>
+  </div>
+  <div class="mb-3 mt-3">
+    <label class="form-label">Proveedor (ID)</label>
+    <input class="form-control" name="proveedor" value="{% if producto.proveedor %}{{ producto.proveedor.id }}{% endif %}">
+  </div>
+  <button class="btn btn-primary">Guardar cambios</button>
+  <a class="btn btn-secondary" href="{% url 'ver_productos' %}">Cancelar</a>
+</form>
+{% endblock %}
+
